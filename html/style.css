@@ -1,5 +1,471 @@
-h1{
-    background-color: aqua;
-    color:blue;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+
+:root {
+    --primary-blue: #0449c2;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --background-light: #F5F6F7;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Cooper BT';
+    src: url('fonts/coooper/CooperLtBT-Bold.woff2') format('woff2'),
+         url('fonts/coooper/CooperLtBT-Bold.woff') format('woff'),
+         url('fonts/coooper/CooperLtBT-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins/Poppins-Light.woff2') format('woff2'),
+         url('fonts/Poppins/Poppins-Light.woff') format('woff'),
+         url('fonts/Poppins/Poppins-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+h2 {
+    font-family: 'Poppins', 'TeX Gyre Schola', serif;
+}
+
+/* Header Styles */
+header {
+    padding: 1rem 5%;
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 2rem;
+    font-weight: 500;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 100vh;
+}
+
+.hero-content {
+
+    flex: 1;
+    padding-left: 5%;
+    margin-left: 5%;
+}
+
+.titre {
+    font-family: 'New Century Schoolbook', 'TeX Gyre Schola', serif;
+}
+
+h1 {
+    font-family: 'New Century Schoolbook', 'TeX Gyre Schola', serif;
+    font-size: 3.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    max-width: 600px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+.job-seeker {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+.recruiter {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Footer Styles */
+footer {
+    background: var(--background-light);
+    padding: 4rem 5% 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 ;
+}
+
+.footer-section h3 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.footer-section a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.app-download {
+    max-width: 1200px;
+    margin: 3rem 0;
+    text-align: left;
+}
+
+.store-buttons {
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.button-container {
+    width: 150px; /* largeur fixe */
+    height: 50px; /* hauteur fixe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* cacher les débordements */
+}
+
+.button-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* .store-button-play img {
+    height: 40px;
+} */
+
+.store-button-store img {
+    height: 80px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-links a {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--text-dark);
+        margin: 5px 0;
+        border-radius: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .hero-image img {
+        width: 100%;
+    }
+}
+
+.hero-container {
+    position: relative;
+    display: inline-block;
+    padding-right: 5%;
+    
+}
+
+.semi-circle {
+    position:absolute;
+    top: 73%;
+    left: 45%;
+    width: 550px; 
+    height: 275px;
+    background-color: #0449c2;
+    border-top-left-radius: 200px; 
+    border-top-right-radius: 200px; 
+    transform: translate(-50%, -50%);
+    z-index: -1; 
+}
+
+.hero-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 100px;
+    position: relative;
+}
+.title h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333333;
+}
+.title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #0449c2;
+    margin-top: 10px;   
+}
+main {
+    margin: auto;
+}
+.main-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    gap: 20px;  
+}
+.container-left,
+.container-right {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.container-right {
+    flex: 1.5;
+    display: flex;
+    justify-content: space-between;
+    /* margin-left: 20px;*/
+    margin-right: 100px;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    gap: 20px;  
+}
+.container-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-left img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.text-block-recruiter,
+.text-block-candidat
+ {
+    padding: 45px;
+    border-radius: 20px;
+    /* margin: 15px; */
+}
+
+.text-block-recruiter {
+    background-color: #0449c2;
+    color: white;
+    font-size: 0.75em;
+    margin-left: 15px;
+}
+
+.text-block-candidat {
+    background-color: #f0f0f0;
+    color: black;
+    font-size: 0.75em;
+    margin-right: 15px;
+}
+
+.title2 {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-bottom: 20px;
+}
+
+.title2 img {
+    width: 30%;
+    height: 30%;
+}
+
+.title2 h2 {
+font-size: 1.25em;
+color: #0449c2;
+}
+
+.title3 {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-bottom: 20px;
+}
+
+.title3 img {
+    width: 30%;
+    height: 30%;
+}
+
+.title3 h2 {
+font-size: 1.25em;
+color: white;
+}
+
+.app-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-bottom: 100px;
+    gap: 20px;  
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding-right: 0;
+    width: 80%;
+}
+
+.app {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+}
+
+.match {
+    /* text-align: center; */
+    font-family: 'Poppins';
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: auto;
 }
